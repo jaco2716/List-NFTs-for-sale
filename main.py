@@ -22,6 +22,7 @@ red = Fore.RED  # Red color.
 green = Fore.GREEN  # Green color.
 yellow = Fore.YELLOW  # Yellow color.
 reset = Style.RESET_ALL  # Reset color attribute.
+failedListings = []
 
 
 class Settings():#object):
@@ -511,45 +512,48 @@ class Opensea(object):
     #         print(f'{red}Failed: {error}{reset}')
 
     def sell_nft(self, index: int, price: int, tryCount: int) -> None:
-
-        """Set a price for the NFT, etc."""
-        # try:
-        # Get sell page for the NFT.
-        self.driver.get(f'https://opensea.io/assets/matic/0xc297c3164f63aa405825fbb3c6d0232c962e963c/{index}/sell')
-        self.element_send_keys(
-            '//input[@name="price"]', str(price))
-        # Click on Duration button
-        self.element_clickable('//*[@id="duration"]')
-        WDW(webdriver, timeout=5)       
-
-        #Find end date input field and input date
-        self.press_key(8, Keys.TAB)
-        webdriver.ActionChains(self.driver).send_keys('0824').perform()
-        # Click on "Complete listing" button.
         try:
-            self.element_clickable('//button[@type="submit"]')
-        except Exception:
-            raise TE('An error occured. Submit button can\'t be clicked')
-        sleep(3)
-         # Click on "Sign" button.
-        self.press_key(3, Keys.TAB)
-        sleep(1)
-        self.press_key(1, Keys.ENTER)
-        # self.element_clickable('//button[@class="Blockreact__Block-sc-1xf18x6-0 Buttonreact__StyledButton-sc-glfma3-0 kXZare kCijbX"]')
-        WDW(webdriver, timeout=1)       
-        # Sign Metamask 
-        self.metamask_sign()
-        WDW(webdriver, timeout=3)
-        # click 'x' icon to close the popup and bring up the page for the NFT that was just listed
-        self.element_clickable('//button[@class="UnstyledButtonreact__UnstyledButton-sc-ty1bh0-0 btgkrL"]')
-        WDW(webdriver, timeout=7)
-        print(f'{green}NFT put up for sale.{reset}')
-        # except TE as error:
-            # tryCount += 1
-            # print(f'{red}NFT sale cancelled: {error}{reset}')
-            # sleep(5000)
-            # if tryCount < 3 :
-            #     self.sell_nft(index, price, tryCount)
+            """Set a price for the NFT, etc."""
+            # Get sell page for the NFT.
+            self.driver.get(f'https://opensea.io/assets/matic/0xc297c3164f63aa405825fbb3c6d0232c962e963c/{index}/sell')
+            self.element_send_keys(
+                '//input[@name="price"]', str(price))
+            # Click on Duration button
+            self.element_clickable('//*[@id="duration"]')
+            WDW(webdriver, timeout=5)       
+
+            #Find end date input field and input date
+            self.press_key(8, Keys.TAB)
+            webdriver.ActionChains(self.driver).send_keys('0808').perform()
+            # Click on "Complete listing" button.
+            try:
+                self.element_clickable('//button[@type="submit"]')
+            except Exception:
+                raise TE('An error occured. Submit button can\'t be clicked')
+            sleep(3)
+            # Click on "Sign" button.
+            self.press_key(3, Keys.TAB)
+            sleep(1)
+            self.press_key(1, Keys.ENTER)
+            # self.element_clickable('//button[@class="Blockreact__Block-sc-1xf18x6-0 Buttonreact__StyledButton-sc-glfma3-0 kXZare kCijbX"]')
+            WDW(webdriver, timeout=1)       
+            # Sign Metamask 
+            self.metamask_sign()
+            WDW(webdriver, timeout=3)
+            # click 'x' icon to close the popup and bring up the page for the NFT that was just listed
+            self.press_key(1, Keys.ESCAPE)
+            # self.element_clickable('//button[@class="UnstyledButtonreact__UnstyledButton-sc-ty1bh0-0 btgkrL"]')
+            WDW(webdriver, timeout=7)
+            print(f'{green}NFT put up for sale.{reset}')
+        except TE as error:
+            tryCount += 1
+            print(f'{red}NFT sale cancelled: {error}{reset}')
+            sleep(5000)
+            if tryCount < 3 :
+                self.sell_nft(index, price, tryCount)
+            else: 
+                print(f'{red}This NFT Failed #{index}')
+                failedListings.append(f'#{index}')
 
       
 # def cls() -> None:
@@ -631,14 +635,16 @@ if __name__ == '__main__':
     
 
     # set starting NFT index
-    i = 1
-    while i < 1000:
+    i = 5138
+    while i <= 10000:
+        if i%500 == 0:
+            print(failedListings)
         tryCount = 0
         if i > 0 <= 200 : 
             price = 0.03
-        if i > 200 <= 2000 : 
+        elif i > 200 <= 2000 : 
             price = 0.02
-        if i > 2000 <= 10000 : 
+        elif i > 2000 <= 10000 : 
             price = 0.01
         opensea.sell_nft(i, price, tryCount)
         i += 1

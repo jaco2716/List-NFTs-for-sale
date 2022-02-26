@@ -1,0 +1,148 @@
+{
+  "nft": [
+    {
+      "file_path": "C:/Users/Welin/Desktop/NFT/Upload NFT test/images/1.png",
+      "nft_name": "CrazyChrisSF #1",
+      "external_link": "https://www.google.com/",
+      "description": "This Crazy Chris collection contains 10.000 unique NFTs with a CSGO related theme. All NFTs contain different properties, some more rare than other.",
+      "collection": "Crazy Chris Special Forces",
+      "properties": [
+        {
+          "type": "Background",
+          "value": "mirage"
+        },
+        {
+          "type": "Skin",
+          "value": "Red"
+        },
+        {
+          "type": "Outfit",
+          "value": "Bluecamo"
+        },
+        {
+          "type": "Weapon",
+          "value": "AkAsimov"
+        },
+        {
+          "type": "Mouth",
+          "value": "DiamondTeeth"
+        },
+        {
+          "type": "Eyes",
+          "value": "RoundSerious"
+        },
+        {
+          "type": "Top",
+          "value": "goldhorns"
+        }
+      ],
+      "levels": [],
+      "stats": [],
+      "unlockable_content": [],
+      "explicit_and_sensitive_content": false,
+      "supply": 1,
+      "blockchain": "Polygon",
+      "price": 200,
+      "quantity": 1,
+      "dna": "83b2ab44c5d9e726773a2d1b565a2a9466f3b38c",
+      "edition": 1,
+      "date": 1643241754225
+    },
+    {
+      "file_path": "C:/Users/Welin/Desktop/NFT/Upload NFT test/images/2.png",
+      "nft_name": "CrazyChrisSF #2",
+      "external_link": "https://www.google.com/",
+      "description": "This Crazy Chris collection contains 10.000 unique NFTs with a CSGO related theme. All NFTs contain different properties, some more rare than other.",
+      "collection": "Crazy Chris Special Forces",
+      "properties": [
+        {
+          "type": "Background",
+          "value": "mirage"
+        },
+        {
+          "type": "Skin",
+          "value": "Red"
+        },
+        {
+          "type": "Outfit",
+          "value": "Bluecamo"
+        },
+        {
+          "type": "Weapon",
+          "value": "AkAsimov"
+        },
+        {
+          "type": "Mouth",
+          "value": "DiamondTeeth"
+        },
+        {
+          "type": "Eyes",
+          "value": "RoundSerious"
+        },
+        {
+          "type": "Top",
+          "value": "goldhorns"
+        }
+      ],
+      "levels": [],
+      "stats": [],
+      "unlockable_content": [],
+      "explicit_and_sensitive_content": false,
+      "supply": 1,
+      "blockchain": "Polygon",
+      "price": 200,
+      "quantity": 1,
+      "dna": "83b2ab44c5d9e726773a2d1b565a2a9466f3b38c",
+      "edition": 1,
+      "date": 1643241754225
+    },
+    {
+      "file_path": "C:/Users/Welin/Desktop/NFT/Upload NFT test/images/3.png",
+      "nft_name": "CrazyChrisSF #3",
+      "external_link": "https://www.google.com/",
+      "description": "This Crazy Chris collection contains 10.000 unique NFTs with a CSGO related theme. All NFTs contain different properties, some more rare than other.",
+      "collection": "Crazy Chris Special Forces",
+      "properties": [
+        {
+          "type": "Background",
+          "value": "mirage"
+        },
+        {
+          "type": "Skin",
+          "value": "Red"
+        },
+        {
+          "type": "Outfit",
+          "value": "Bluecamo"
+        },
+        {
+          "type": "Weapon",
+          "value": "AkAsimov"
+        },
+        {
+          "type": "Mouth",
+          "value": "DiamondTeeth"
+        },
+        {
+          "type": "Eyes",
+          "value": "RoundSerious"
+        },
+        {
+          "type": "Top",
+          "value": "goldhorns"
+        }
+      ],
+      "levels": [],
+      "stats": [],
+      "unlockable_content": [],
+      "explicit_and_sensitive_content": false,
+      "supply": 1,
+      "blockchain": "Polygon",
+      "price": 200,
+      "quantity": 1,
+      "dna": "83b2ab44c5d9e726773a2d1b565a2a9466f3b38c",
+      "edition": 1,
+      "date": 1643241754225
+    }
+  ]
+}

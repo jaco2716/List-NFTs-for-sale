@@ -548,7 +548,6 @@ class Opensea(object):
         except TE as error:
             tryCount += 1
             print(f'{red}NFT sale cancelled: {error}{reset}')
-            sleep(5000)
             if tryCount < 3 :
                 self.sell_nft(index, price, tryCount)
             else: 
@@ -635,16 +634,18 @@ if __name__ == '__main__':
     
 
     # set starting NFT index
-    i = 5138
-    while i <= 10000:
+    i = 801
+    while i <= 5000:
+        if i == 1250:
+            i += 200
         if i%500 == 0:
             print(failedListings)
         tryCount = 0
-        if i > 0 <= 200 : 
+        if i > 0 and i <= 200 : 
             price = 0.03
-        elif i > 200 <= 2000 : 
+        elif i > 200 and i <= 2000 : 
             price = 0.02
-        elif i > 2000 <= 10000 : 
+        elif i > 2000 and i <= 10000 : 
             price = 0.01
         opensea.sell_nft(i, price, tryCount)
         i += 1

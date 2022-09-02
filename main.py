@@ -546,13 +546,14 @@ class Opensea(object):
             WDW(webdriver, timeout=7)
             print(f'{green}NFT put up for sale.{reset}')
         except TE as error:
-            tryCount += 1
-            print(f'{red}NFT sale cancelled: {error}{reset}')
             if tryCount < 3 :
+                print(f'{red}#{index} NFT sale cancelled: Trying again... Attempt: {tryCount-1} {reset}')
+                tryCount += 1
                 self.sell_nft(index, price, tryCount)
             else: 
-                print(f'{red}This NFT Failed #{index}')
+                print(f'{red}This NFT Failed #{index} {reset}')
                 failedListings.append(f'#{index}')
+                print(failedListings)
 
       
 # def cls() -> None:
@@ -634,13 +635,13 @@ if __name__ == '__main__':
     
 
     # set starting NFT index
-    i = 801
+    i = 4470
     while i <= 5000:
         if i == 1250:
             i += 200
         if i%500 == 0:
             print(failedListings)
-        tryCount = 0
+        tryCount = 1
         if i > 0 and i <= 200 : 
             price = 0.03
         elif i > 200 and i <= 2000 : 
